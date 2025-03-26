@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>智能WhatsApp分流</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // WhatsApp号码池（已处理格式）
+const numbers = [
+    556181190498,557193299576,557193312687,
+    556284930025,5521987875869,5521981168180,
+    5521959289673,554298169974,5519981592924,
+    5519981592859,5521987878229,554898660074,
+    557192200791,555181370113,556186650132,
+    557193500281,5511943858223,5511942375480,
+    5511995117354,5511918528790,5511911042584,
+    558796440334,555181190169,556282341667,
+    5512981931356,554598490311,553173110100,
+    559399540112,5527981520061,554396740180,
+    5521959110150
+];
+        // 智能分流逻辑
+        function redirect() {
+            const randomIndex = Math.floor(Math.random() * numbers.length);
+            const selectedNumber = numbers[randomIndex];
+            window.location.href = `https://wa.me/${selectedNumber}`;
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <h2>正在为您分配客服...</h2>
+    <p>如果未自动跳转，请<a href="javascript:redirect()">点击这里重试</a></p>
+</body>
+</html>
